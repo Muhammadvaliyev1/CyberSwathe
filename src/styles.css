@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.check1:checked .check11 {
+    @apply bg-spaced-gray
+}
