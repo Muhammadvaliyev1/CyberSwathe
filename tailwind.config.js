@@ -25,7 +25,9 @@ module.exports = {
       'gray': '#667085',
       'space-gray': '#E4E4E4',
       'spaced-gray': '#F6F7F9',
+      'dark-gray': '#D9D9D9',
       'orange': '#E9635E',
+      'red': '#FF0000',
       'green': '#7AD979',
     },
     padding: {
