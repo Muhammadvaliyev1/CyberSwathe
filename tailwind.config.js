@@ -5,13 +5,18 @@ module.exports = {
     extend: {
     fontFamily: {
       'DM': ['DM Sans'],
-      'Poppins': ['Poppins']
+      'Poppins': ['Poppins'],
+      'Inter': ['Inter'],
     },
     maxWidth: {
       '8xl': '1440px'
     },
     width: {
-      '1/10':'10%'
+      '1/10':'10%',
+      '4.5': '18px'
+    },
+    height: {
+      '4.5': '18px'
     },
     colors: {
       'cyanblue': '#72D1F4',
