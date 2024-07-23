@@ -12,7 +12,7 @@
 </head>
 <body>
   <div class="flex">
-    <aside class="font-DM max-w-[280px] 2xl:max-w-xs transition-all ease-in-out duration-300 shrink-0 w-full bg-white h-screen sticky top-0 left-0">
+    <aside id="aside" class="font-DM max-w-[280px] 2xl:max-w-xs transition-all ease-in-out duration-300 shrink-0 w-full bg-white h-screen sticky top-0 left-0">
       <div class="visible delay-300 h-full overflow-y-auto transition-all ease-in-out">
         <a href="/" class="sticky top-0 left-0 h-24">
           <img src="./img/logo.png" alt="logo">
@@ -164,6 +164,13 @@
           </a>
         </div>
       </div>
+      <button id="aside-button" class="absolute rounded-r-xl bg-space-gray top-0 -right-6 py-0.5 pr-1">
+        <div id="asbutton" class="transition-all duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" class="size-5 transition-all ease-in-out duration-300 rotate-180">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+          </svg>
+        </div>
+      </button>
     </aside>
     <main class="w-full font-Poppins">
       <div class="flex items-center justify-start gap-x-3 pl-11 pt-7 pb-5">
@@ -299,42 +306,9 @@
               </div>
             </div>
         </div>
-        <div class="w-full bg-white rounded-xl overflow-hidden">
-          <button type="button" class="w-full border-b border-gray border-opacity-20 flex items-center justify-between pl-6 pr-11 pt-5 pb-3.5">
-            <span class="text-gray">Historical Data Analysis</span>
-            <span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8" fill="none">
-                <path d="M1 1L7.25 7.25L13.5 1" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-          </button>
-          <button type="button" class="w-full border-b border-gray border-opacity-20 flex items-center justify-between pl-6 pr-11 pt-3.5 pb-3">
-            <span class="text-gray">PowerBI Integration</span>
-            <span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8" fill="none">
-                <path d="M1 1L7.25 7.25L13.5 1" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-          </button>
-          <button type="button" class="w-full border-b border-gray border-opacity-20 flex items-center justify-between pl-6 pr-11 pt-3.5 pb-4">
-            <span class="text-gray">Report Archiving</span>
-            <span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8" fill="none">
-                <path d="M1 1L7.25 7.25L13.5 1" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-          </button>
-          <button type="button" class="w-full flex items-center justify-between pl-6 pr-11 py-3.5">
-            <span class="text-gray">Scheduled Export</span>
-            <span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 15 8" fill="none">
-                <path d="M1 1L7.25 7.25L13.5 1" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-          </button>
-        </div>
       </div>
     </main>
   </div>
+  <script src="./app.js"></script>
 </body>
 </html>
