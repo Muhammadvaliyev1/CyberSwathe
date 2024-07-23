@@ -34,10 +34,10 @@ document.getElementById('aside-button').addEventListener('click', function() {
     const asbutton = document.getElementById('asbutton');
 
     // Toggle classes on aside
-    if (aside.classList.contains('max-w-[0px]')) {
-        aside.classList.remove('max-w-[0px]');
+    if (aside.classList.contains('max-w-0')) {
+        aside.classList.remove('max-w-0');
     } else {
-        aside.classList.add('max-w-[0px]');
+        aside.classList.add('max-w-0');
     }
 
     // Toggle classes on main
