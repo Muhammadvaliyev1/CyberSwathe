@@ -1,5 +1,6 @@
 document.querySelectorAll('.btn').forEach(button => {
     button.addEventListener('click', () => {
+        // Убираем активное состояние со всех кнопок
         document.querySelectorAll('.btn').forEach(btn => {
             btn.classList.remove('bg-cyanblue', 'text-white');
             btn.classList.add('bg-spaced-gray');
@@ -9,7 +10,12 @@ document.querySelectorAll('.btn').forEach(button => {
             btn.querySelector('div').classList.add('bg-gray');
             btn.querySelector('.font-medium').classList.remove('text-white');
             btn.querySelector('.font-medium').classList.add('text-gray');
+            
+            // Удаляем указанные классы
+            btn.classList.remove('hover:bg-cyanblue', 'bg-opacity-20');
         });
+
+        // Устанавливаем активное состояние для нажатой кнопки
         button.classList.remove('bg-spaced-gray');
         button.classList.add('bg-cyanblue');
         button.querySelector('span').classList.remove('text-red-500');
@@ -19,6 +25,10 @@ document.querySelectorAll('.btn').forEach(button => {
         button.querySelector('.font-medium').classList.remove('text-gray');
         button.querySelector('.font-medium').classList.add('text-white');
 
+        // Удаляем указанные классы с нажатой кнопки
+        button.classList.remove('hover:bg-cyanblue', 'bg-opacity-20');
+
+        // Показываем соответствующий контент
         document.querySelectorAll('.content').forEach(content => {
             content.classList.add('hidden');
             content.classList.remove('grid');
@@ -27,6 +37,7 @@ document.querySelectorAll('.btn').forEach(button => {
         document.getElementById(button.getAttribute('data-content')).classList.add('grid');
     });
 });
+
 
 document.getElementById('aside-button').addEventListener('click', function() {
     const aside = document.getElementById('aside');

@@ -713,6 +713,9 @@ video {
 .max-w-\[250px\] {
   max-width: 250px;
 }
+.max-w-\[280px\] {
+  max-width: 280px;
+}
 .max-w-\[300px\] {
   max-width: 300px;
 }
@@ -724,18 +727,6 @@ video {
 }
 .max-w-ss {
   max-width: 280px;
-}
-.max-w-\[280px\] {
-  max-width: 280px;
-}
-.max-w-\[0px\] {
-  max-width: 0px;
-}
-.max-w-1 {
-  max-width: 0.25rem;
-}
-.max-w-2 {
-  max-width: 0.5rem;
 }
 .shrink-0 {
   flex-shrink: 0;
