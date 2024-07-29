@@ -35,8 +35,10 @@ document.getElementById('aside-button').addEventListener('click', function() {
 
     // Toggle classes on aside
     if (aside.classList.contains('max-w-0')) {
+        aside.classList.add('max-w-[280px]');
         aside.classList.remove('max-w-0');
     } else {
+        aside.classList.remove('max-w-[280px]');
         aside.classList.add('max-w-0');
     }
 

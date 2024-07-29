@@ -9,7 +9,8 @@ module.exports = {
       'Inter': ['Inter'],
     },
     maxWidth: {
-      '8xl': '1440px'
+      '8xl': '1440px',
+      'ss': '280px'
     },
     width: {
       '1/10':'10%',
