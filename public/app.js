@@ -68,22 +68,49 @@ document.getElementById('aside-button').addEventListener('click', function() {
 });
 
 
-function showDropdownOptions() {
-    document.getElementById("options").classList.toggle("hidden");
-    document.getElementById("arrow-up").classList.toggle("hidden");
-    document.getElementById("arrow-down").classList.toggle("hidden");
+function showDropdownOptions(buttonId, optionsId, arrowUpId, arrowDownId) {
+    // Hide other dropdowns
+    if (buttonId === 'dropdownButton1') {
+        document.getElementById("options2").classList.add("hidden");
+        document.getElementById("arrow-up-2").classList.add("hidden");
+        document.getElementById("arrow-down-2").classList.remove("hidden");
+    } else {
+        document.getElementById("options1").classList.add("hidden");
+        document.getElementById("arrow-up-1").classList.add("hidden");
+        document.getElementById("arrow-down-1").classList.remove("hidden");
+    }
+    
+    // Toggle current dropdown
+    document.getElementById(optionsId).classList.toggle("hidden");
+    document.getElementById(arrowUpId).classList.toggle("hidden");
+    document.getElementById(arrowDownId).classList.toggle("hidden");
 }
 
-function showDropdownOptions1() {
-    document.getElementById("options1").classList.toggle("hidden");
-    document.getElementById("arrow-up").classList.toggle("hidden");
-    document.getElementById("arrow-down").classList.toggle("hidden");
+function closeDropdownOptions(event) {
+    if (!document.getElementById("dropdownButton1").contains(event.target) && !document.getElementById("options1").contains(event.target)) {
+        document.getElementById("options1").classList.add("hidden");
+        document.getElementById("arrow-up-1").classList.add("hidden");
+        document.getElementById("arrow-down-1").classList.remove("hidden");
+    }
+
+    if (!document.getElementById("dropdownButton2").contains(event.target) && !document.getElementById("options2").contains(event.target)) {
+        document.getElementById("options2").classList.add("hidden");
+        document.getElementById("arrow-up-2").classList.add("hidden");
+        document.getElementById("arrow-down-2").classList.remove("hidden");
+    }
 }
-function action() {
-    document.getElementById("action").classList.toggle("hidden");
-    document.getElementById("arrow-up").classList.toggle("hidden");
-    document.getElementById("arrow-down").classList.toggle("hidden");
-}
+
+document.getElementById("dropdownButton1").addEventListener("click", function(event) {
+    showDropdownOptions('dropdownButton1', 'options1', 'arrow-up-1', 'arrow-down-1');
+    event.stopPropagation();
+});
+
+document.getElementById("dropdownButton2").addEventListener("click", function(event) {
+    showDropdownOptions('dropdownButton2', 'options2', 'arrow-up-2', 'arrow-down-2');
+    event.stopPropagation();
+});
+
+document.addEventListener("click", closeDropdownOptions);
 
 function toggleAccordion(button) {
     const allContents = document.querySelectorAll('.accordion-content');

@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.check1:checked .check11 {
-    @apply bg-spaced-gray
+.drp1:focus .drp-show1 {
+    display: block;
 }
