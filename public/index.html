@@ -9,10 +9,66 @@
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="/src/styles.css">
   <title>CyberSwathe</title>
+  <style>
+    /* Основные стили для кнопок */
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding: 8px 28px;
+        border-radius: 9999px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        background-color: #F6F7F9; /* bg-spaced-gray */
+        color: #666666; /* text-gray */
+    }
+
+    .btn.bg-cyanblue {
+        background-color: #00B2FF; /* bg-cyanblue */
+        color: #FFFFFF; /* text-white */
+    }
+
+    .btn .font-medium {
+        color: #666666; /* text-gray */
+    }
+
+    .btn.bg-cyanblue .font-medium {
+        color: #FFFFFF; /* text-white */
+    }
+
+    .btn .text-red-500 {
+        color: #F56C6C; /* text-red-500 */
+    }
+
+    .btn .text-white {
+        color: #FFFFFF; /* text-white */
+    }
+
+    .btn .bg-gray {
+        background-color: #E0E0E0; /* bg-gray */
+    }
+
+    .btn .bg-white {
+        background-color: #FFFFFF; /* bg-white */
+    }
+
+    /* Hover эффект только для неактивных кнопок */
+    .btn:not(.bg-cyanblue):hover {
+        background-color: rgba(0, 178, 255, 0.2); /* bg-opacity-20 */
+    }
+
+    .content {
+        display: none; /* По умолчанию скрыто */
+    }
+
+    .content.grid {
+        display: grid;
+    }
+  </style>
 </head>
 <body class="font-DM">
   <div class="flex">
-    <aside id="aside" class="font-DM max-w-ss 2xl:max-w-xs transition-all ease-in-out duration-300 shrink-0 bg-white h-screen sticky top-0 left-0">
+    <aside id="aside" class="font-DM max-w-ss transition-all ease-in-out duration-300 shrink-0 bg-white h-screen sticky top-0 left-0">
       <div class="visible delay-300 h-full overflow-y-auto transition-all ease-in-out">
         <a href="/" class="w-full bg-white sticky top-0 left-0 h-24">
           <img src="./img/logo.png" alt="logo">
@@ -191,34 +247,34 @@
             </div>
             <div class="space-y-2 mt-6">
               <button type="button" data-content="content1" class="btn w-full bg-cyanblue flex items-center justify-start rounded-3xl pl-7 py-1.5">
-                <span class="text-white text-xl mr-6">2</span>
-                <div class="w-[1px] h-[34px] bg-white"></div>
-                <span class="ml-3.5 font-medium text-white">Endpoint Security</span>
+                  <span class="text-white text-xl mr-6">2</span>
+                  <div class="w-[1px] h-[34px] bg-gray"></div>
+                  <span class="ml-3.5 font-medium text-white">Endpoint Security</span>
               </button>
-              <button type="button" data-content="content2" class="btn w-full bg-spaced-gray flex items-center justify-start rounded-3xl pl-7 py-1.5">
-                <span class="text-red-500 text-xl mr-6">5</span>
-                <div class="w-[1px] h-[34px] bg-gray"></div>
-                <span class="ml-3.5 font-medium text-gray">Network Security</span>
+              <button type="button" data-content="content2" class="btn w-full bg-spaced-gray hover:bg-cyanblue hover:bg-opacity-20 flex items-center justify-start rounded-3xl pl-7 py-1.5">
+                  <span class="text-red-500 text-xl mr-6">5</span>
+                  <div class="w-[1px] h-[34px] bg-gray"></div>
+                  <span class="ml-3.5 font-medium text-gray">Network Security</span>
               </button>
-              <button type="button" data-content="content3" class="btn w-full bg-spaced-gray flex items-center justify-start rounded-3xl pl-7 py-1.5">
-                <span class="text-red-500 text-xl mr-6">3</span>
-                <div class="w-[1px] h-[34px] bg-gray"></div>
-                <span class="ml-3.5 font-medium text-gray">Cloud Security</span>
+              <button type="button" data-content="content3" class="btn w-full bg-spaced-gray hover:bg-cyanblue hover:bg-opacity-20 flex items-center justify-start rounded-3xl pl-7 py-1.5">
+                  <span class="text-red-500 text-xl mr-6">3</span>
+                  <div class="w-[1px] h-[34px] bg-gray"></div>
+                  <span class="ml-3.5 font-medium text-gray">Cloud Security</span>
               </button>
-              <button type="button" data-content="content4" class="btn w-full bg-spaced-gray flex items-center justify-start rounded-3xl pl-7 py-1.5">
-                <span class="text-red-500 text-xl mr-6">0</span>
-                <div class="w-[1px] h-[34px] bg-gray"></div>
-                <span class="ml-3.5 font-medium text-gray">Email Security</span>
+              <button type="button" data-content="content4" class="btn w-full bg-spaced-gray hover:bg-cyanblue hover:bg-opacity-20 flex items-center justify-start rounded-3xl pl-7 py-1.5">
+                  <span class="text-red-500 text-xl mr-6">0</span>
+                  <div class="w-[1px] h-[34px] bg-gray"></div>
+                  <span class="ml-3.5 font-medium text-gray">Email Security</span>
               </button>
-              <button type="button" data-content="content5" class="btn w-full bg-spaced-gray flex items-center justify-start rounded-3xl pl-7 py-1.5">
-                <span class="text-red-500 text-xl mr-6">2</span>
-                <div class="w-[1px] h-[34px] bg-gray"></div>
-                <span class="ml-3.5 font-medium text-gray">Endpoint Data Governance</span>
+              <button type="button" data-content="content5" class="btn w-full bg-spaced-gray hover:bg-cyanblue hover:bg-opacity-20 flex items-center justify-start rounded-3xl pl-7 py-1.5">
+                  <span class="text-red-500 text-xl mr-6">2</span>
+                  <div class="w-[1px] h-[34px] bg-gray"></div>
+                  <span class="ml-3.5 font-medium text-gray">Endpoint Data Governance</span>
               </button>
-              <button type="button" data-content="content6" class="btn w-full bg-spaced-gray flex items-center justify-start rounded-3xl pl-7 py-1.5">
-                <span class="text-red-500 text-xl mr-6">2</span>
-                <div class="w-[1px] h-[34px] bg-gray"></div>
-                <span class="ml-3.5 font-medium text-gray">User Data Governance</span>
+              <button type="button" data-content="content6" class="btn w-full bg-spaced-gray hover:bg-cyanblue hover:bg-opacity-20 flex items-center justify-start rounded-3xl pl-7 py-1.5">
+                  <span class="text-red-500 text-xl mr-6">2</span>
+                  <div class="w-[1px] h-[34px] bg-gray"></div>
+                  <span class="ml-3.5 font-medium text-gray">User Data Governance</span>
               </button>
             </div>
           </div>
@@ -918,6 +974,39 @@
     </main>
   </div>
   
+  <!-- <div class="space-y-2 mt-6">
+    <button type="button" data-content="content1" class="btn w-full bg-cyanblue flex items-center justify-start rounded-3xl pl-7 py-1.5">
+        <span class="text-white text-xl mr-6">2</span>
+        <div class="w-[1px] h-[34px] bg-white"></div>
+        <span class="ml-3.5 font-medium text-white">Endpoint Security</span>
+    </button>
+    <button type="button" data-content="content2" class="btn w-full bg-spaced-gray hover:bg-cyanblue hover:bg-opacity-20 flex items-center justify-start rounded-3xl pl-7 py-1.5">
+        <span class="text-red-500 text-xl mr-6">5</span>
+        <div class="w-[1px] h-[34px] bg-gray"></div>
+        <span class="ml-3.5 font-medium text-gray">Network Security</span>
+    </button>
+    <button type="button" data-content="content3" class="btn w-full bg-spaced-gray hover:bg-cyanblue hover:bg-opacity-20 flex items-center justify-start rounded-3xl pl-7 py-1.5">
+        <span class="text-red-500 text-xl mr-6">3</span>
+        <div class="w-[1px] h-[34px] bg-gray"></div>
+        <span class="ml-3.5 font-medium text-gray">Cloud Security</span>
+    </button>
+    <button type="button" data-content="content4" class="btn w-full bg-spaced-gray hover:bg-cyanblue hover:bg-opacity-20 flex items-center justify-start rounded-3xl pl-7 py-1.5">
+        <span class="text-red-500 text-xl mr-6">0</span>
+        <div class="w-[1px] h-[34px] bg-gray"></div>
+        <span class="ml-3.5 font-medium text-gray">Email Security</span>
+    </button>
+    <button type="button" data-content="content5" class="btn w-full bg-spaced-gray hover:bg-cyanblue hover:bg-opacity-20 flex items-center justify-start rounded-3xl pl-7 py-1.5">
+        <span class="text-red-500 text-xl mr-6">2</span>
+        <div class="w-[1px] h-[34px] bg-gray"></div>
+        <span class="ml-3.5 font-medium text-gray">Endpoint Data Governance</span>
+    </button>
+    <button type="button" data-content="content6" class="btn w-full bg-spaced-gray hover:bg-cyanblue hover:bg-opacity-20 flex items-center justify-start rounded-3xl pl-7 py-1.5">
+        <span class="text-red-500 text-xl mr-6">2</span>
+        <div class="w-[1px] h-[34px] bg-gray"></div>
+        <span class="ml-3.5 font-medium text-gray">User Data Governance</span>
+    </button>
+  </div> -->
+
   <script src="./app.js"></script>
 </body>
 </html>

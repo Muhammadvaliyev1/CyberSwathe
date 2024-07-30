@@ -12,7 +12,7 @@
 </head>
 <body class="font-DM">
   <div class="flex">
-    <aside id="aside" class="max-w-ss 2xl:max-w-xs transition-all ease-in-out duration-300 shrink-0 bg-white h-screen sticky top-0 left-0">
+    <aside id="aside" class="max-w-ss transition-all ease-in-out duration-300 shrink-0 bg-white h-screen sticky top-0 left-0">
       <div class="visible delay-300 h-full overflow-y-auto transition-all ease-in-out">
         <a href="/" class="sticky top-0 left-0 h-24">
           <img src="./img/logo.png" alt="logo">
@@ -282,16 +282,16 @@
               <div class="flex items-center justify-between border-b border-gray border-opacity-20 pb-7 pr-7">
                 <span class="font-Inter text-gray">ID 12344FFSSA87</span>
                 <div class="relative">
-                  <button onclick="action()" type="button" class="bg-cyanblue rounded-xl flex items-center justify-between gap-x-3 px-5 pt-3.5 pb-3">
+                  <button id="toggleButton" type="button" class="bg-cyanblue rounded-xl flex items-center justify-between gap-x-3 px-5 pt-3.5 pb-3">
                     <span class="font-Inter text-gray">Actions</span>
                     <div>
-                      <svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L7.25 7.25L13.5 1" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>                      
+                        <svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L7.25 7.25L13.5 1" stroke="#667085" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                      
                     </div>
                   </button>
-                  <div id="action" class="absolute hidden w-52 right-0 py-2 mt-2 bg-white rounded-lg shadow-xl">
-                    <a href="#" class="block px-4 py-2 text-gray hover:bg-cyanblue">Clouse ticket</a>
+                  <div id="action" tabindex="0" class="absolute max-h-0 hidden w-52 right-0 py-2 mt-2 bg-white rounded-lg shadow-xl">
+                    <a href="#" class="block px-4 py-2 text-gray hover:bg-cyanblue">Close ticket</a>
                   </div>
                 </div>
               </div>

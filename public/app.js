@@ -12,7 +12,7 @@ document.querySelectorAll('.btn').forEach(button => {
             btn.querySelector('.font-medium').classList.add('text-gray');
             
             // Удаляем указанные классы
-            btn.classList.remove('hover:bg-cyanblue', 'bg-opacity-20');
+            btn.classList.remove('hover:bg-cyanblue', 'hover:bg-opacity-20');
         });
 
         // Устанавливаем активное состояние для нажатой кнопки
@@ -26,17 +26,33 @@ document.querySelectorAll('.btn').forEach(button => {
         button.querySelector('.font-medium').classList.add('text-white');
 
         // Удаляем указанные классы с нажатой кнопки
-        button.classList.remove('hover:bg-cyanblue', 'bg-opacity-20');
+        button.classList.remove('hover:bg-cyanblue', 'hover:bg-opacity-20');
 
         // Показываем соответствующий контент
         document.querySelectorAll('.content').forEach(content => {
             content.classList.add('hidden');
             content.classList.remove('grid');
         });
-        document.getElementById(button.getAttribute('data-content')).classList.remove('hidden');
-        document.getElementById(button.getAttribute('data-content')).classList.add('grid');
+        const contentId = button.getAttribute('data-content');
+        document.getElementById(contentId).classList.remove('hidden');
+        document.getElementById(contentId).classList.add('grid');
     });
 });
+
+// Убираем hover классы у всех кнопок, кроме первой
+document.querySelectorAll('.btn').forEach((button, index) => {
+    if (index !== 0) {
+        button.classList.remove('hover:bg-cyanblue', 'hover:bg-opacity-20');
+    }
+});
+
+// Убираем hover классы у всех кнопок, кроме первой
+document.querySelectorAll('.btn').forEach(button => {
+    if (button !== document.querySelector('.btn')) {
+        button.classList.remove('hover:bg-cyanblue', 'hover:bg-opacity-20');
+    }
+});
+
 
 
 document.getElementById('aside-button').addEventListener('click', function() {
@@ -69,48 +85,48 @@ document.getElementById('aside-button').addEventListener('click', function() {
 
 
 function showDropdownOptions(buttonId, optionsId, arrowUpId, arrowDownId) {
-    // Hide other dropdowns
-    if (buttonId === 'dropdownButton1') {
-        document.getElementById("options2").classList.add("hidden");
-        document.getElementById("arrow-up-2").classList.add("hidden");
-        document.getElementById("arrow-down-2").classList.remove("hidden");
-    } else {
-        document.getElementById("options1").classList.add("hidden");
-        document.getElementById("arrow-up-1").classList.add("hidden");
-        document.getElementById("arrow-down-1").classList.remove("hidden");
-    }
-    
-    // Toggle current dropdown
-    document.getElementById(optionsId).classList.toggle("hidden");
-    document.getElementById(arrowUpId).classList.toggle("hidden");
-    document.getElementById(arrowDownId).classList.toggle("hidden");
-}
+            // Hide other dropdowns
+            if (buttonId === 'dropdownButton1') {
+                document.getElementById("options2").classList.add("hidden");
+                document.getElementById("arrow-up-2").classList.add("hidden");
+                document.getElementById("arrow-down-2").classList.remove("hidden");
+            } else {
+                document.getElementById("options1").classList.add("hidden");
+                document.getElementById("arrow-up-1").classList.add("hidden");
+                document.getElementById("arrow-down-1").classList.remove("hidden");
+            }
+            
+            // Toggle current dropdown
+            document.getElementById(optionsId).classList.toggle("hidden");
+            document.getElementById(arrowUpId).classList.toggle("hidden");
+            document.getElementById(arrowDownId).classList.toggle("hidden");
+        }
 
-function closeDropdownOptions(event) {
-    if (!document.getElementById("dropdownButton1").contains(event.target) && !document.getElementById("options1").contains(event.target)) {
-        document.getElementById("options1").classList.add("hidden");
-        document.getElementById("arrow-up-1").classList.add("hidden");
-        document.getElementById("arrow-down-1").classList.remove("hidden");
-    }
+        function closeDropdownOptions(event) {
+            if (!document.getElementById("dropdownButton1").contains(event.target) && !document.getElementById("options1").contains(event.target)) {
+                document.getElementById("options1").classList.add("hidden");
+                document.getElementById("arrow-up-1").classList.add("hidden");
+                document.getElementById("arrow-down-1").classList.remove("hidden");
+            }
 
-    if (!document.getElementById("dropdownButton2").contains(event.target) && !document.getElementById("options2").contains(event.target)) {
-        document.getElementById("options2").classList.add("hidden");
-        document.getElementById("arrow-up-2").classList.add("hidden");
-        document.getElementById("arrow-down-2").classList.remove("hidden");
-    }
-}
+            if (!document.getElementById("dropdownButton2").contains(event.target) && !document.getElementById("options2").contains(event.target)) {
+                document.getElementById("options2").classList.add("hidden");
+                document.getElementById("arrow-up-2").classList.add("hidden");
+                document.getElementById("arrow-down-2").classList.remove("hidden");
+            }
+        }
 
-document.getElementById("dropdownButton1").addEventListener("click", function(event) {
-    showDropdownOptions('dropdownButton1', 'options1', 'arrow-up-1', 'arrow-down-1');
-    event.stopPropagation();
-});
+        document.getElementById("dropdownButton1").addEventListener("click", function(event) {
+            showDropdownOptions('dropdownButton1', 'options1', 'arrow-up-1', 'arrow-down-1');
+            event.stopPropagation();
+        });
 
-document.getElementById("dropdownButton2").addEventListener("click", function(event) {
-    showDropdownOptions('dropdownButton2', 'options2', 'arrow-up-2', 'arrow-down-2');
-    event.stopPropagation();
-});
+        document.getElementById("dropdownButton2").addEventListener("click", function(event) {
+            showDropdownOptions('dropdownButton2', 'options2', 'arrow-up-2', 'arrow-down-2');
+            event.stopPropagation();
+        });
 
-document.addEventListener("click", closeDropdownOptions);
+        document.addEventListener("click", closeDropdownOptions);
 
 function toggleAccordion(button) {
     const allContents = document.querySelectorAll('.accordion-content');
@@ -135,3 +151,39 @@ function toggleAccordion(button) {
     content.classList.toggle('show');
     svg.classList.toggle('rotate-180');
 }
+
+function toggleAction() {
+    const actionElement = document.getElementById('action');
+    
+    if (actionElement.classList.contains('hidden')) {
+        actionElement.classList.remove('hidden');
+        actionElement.classList.add('max-h-[227px]');
+    } else {
+        actionElement.classList.add('hidden');
+        actionElement.classList.remove('max-h-[227px]');
+    }
+}
+
+// Добавляем обработчики событий
+const button = document.getElementById('toggleButton');
+const actionElement = document.getElementById('action');
+
+button.addEventListener('focus', toggleAction);
+button.addEventListener('blur', function(event) {
+    // Откладываем закрытие, чтобы пользователь мог взаимодействовать с dropdown
+    setTimeout(() => {
+        if (!actionElement.contains(document.activeElement) && !button.contains(document.activeElement)) {
+            actionElement.classList.add('hidden');
+            actionElement.classList.remove('max-h-[227px]');
+        }
+    }, 100);
+});
+
+actionElement.addEventListener('blur', function(event) {
+    setTimeout(() => {
+        if (!actionElement.contains(document.activeElement) && !button.contains(document.activeElement)) {
+            actionElement.classList.add('hidden');
+            actionElement.classList.remove('max-h-[227px]');
+        }
+    }, 100);
+});
