@@ -45,12 +45,12 @@ document.getElementById('aside-button').addEventListener('click', function() {
     const asbutton = document.getElementById('asbutton');
 
     // Toggle classes on aside
-    if (aside.classList.contains('max-w-0')) {
-        aside.classList.add('max-w-[280px]');
-        aside.classList.remove('max-w-0');
-    } else {
-        aside.classList.remove('max-w-[280px]');
+    if (aside.classList.contains('max-w-ss')) {
+        aside.classList.remove('max-w-ss')
         aside.classList.add('max-w-0');
+    } else {
+        aside.classList.remove('max-w-0');
+        aside.classList.add('max-w-ss')
     }
 
     // Toggle classes on main
